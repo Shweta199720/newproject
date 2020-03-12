@@ -1,0 +1,23 @@
+{% extends 'index.html'%}
+
+{% block content %}
+
+  <h1 align="cent">Create New Account</h1>
+  <form method="POST">
+
+
+    <label for="Name"><b>Name</b></label>
+    <br><input type="text" placeholder="Enter Name" name="name" required></br>
+
+      <label for="birthday"><b>Birthday:</b></label>
+    <br><input type="date" id="birthday" name="birthday"></br>
+
+
+    <label for="phone"><b>Enter a phone number:</b></label>
+    <br><input type="tel" id="phone" name="phone" placeholder="0123456789" ></br>
+     {% csrf_token%}
+      {{form.as_p}}
+
+     <button>Register</button>
+  </form>
+{% endblock %}
